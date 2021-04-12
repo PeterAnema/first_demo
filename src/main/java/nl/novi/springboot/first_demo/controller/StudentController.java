@@ -57,4 +57,9 @@ public class StudentController {
         return new ResponseEntity<>("Record updated", HttpStatus.NO_CONTENT);
     }
 
+    @PutMapping(value = "/students/{id}/cursussen/{id}")
+    public ResponseEntity<Object> updateCijfer(@RequestBody int cijfer) {
+        return new ResponseEntity<>("Record updated", HttpStatus.NO_CONTENT);
+    }
+
 }
