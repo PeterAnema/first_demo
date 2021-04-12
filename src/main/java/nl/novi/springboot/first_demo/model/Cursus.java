@@ -21,6 +21,9 @@ public class Cursus {
     private String docent;
 
     @OneToMany(mappedBy = "cursus")
+    @JsonIgnoreProperties("cursus")
+//    @JsonBackReference
+//    @JsonManagedReference
     List<StudentCursus> student_cursus;
 
     // Getters and setters

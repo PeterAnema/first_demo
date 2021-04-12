@@ -30,6 +30,9 @@ public class Student {
     private String telefoonnummer;
 
     @OneToMany(mappedBy = "student")
+    @JsonIgnoreProperties("student")
+//    @JsonBackReference
+//    @JsonManagedReference
     List<StudentCursus> student_cursus;
 
     // constructors

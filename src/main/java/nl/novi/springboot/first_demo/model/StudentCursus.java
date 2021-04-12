@@ -15,11 +15,13 @@ public class StudentCursus {
     @ManyToOne
     @MapsId("studentId")
     @JoinColumn(name = "student_id")
+    @JsonIgnoreProperties("student_cursus")
     private Student student;
 
     @ManyToOne
     @MapsId("cursusId")
     @JoinColumn(name = "cursus_id")
+    @JsonIgnoreProperties("student_cursus")
     private Cursus cursus;
 
     @Column
