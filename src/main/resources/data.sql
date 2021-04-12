@@ -6,8 +6,7 @@ VALUES
 ('Springboot', 'Peter Anema'),
 ('Java', 'Frits');
 
-INSERT INTO students_cursussen (student_id, cursussen_id)
-VALUES (1, 1), (1, 2);
-
-INSERT INTO cursussen_studenten (studenten_id, cursus_id)
-VALUES (1, 1), (1, 2);
+INSERT INTO student_cursus (student_id, cursus_id, cijfer)
+VALUES
+ (1, 1, 9)
+,(1, 2, 8);

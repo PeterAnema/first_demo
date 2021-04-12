@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class StudentCursus {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
