@@ -11,7 +11,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<Student> findByAchternaamIs(String name);
     List<Student> findByAchternaamStartingWithOrderByAchternaam(String name);
 
-    @Query("SELECT * FROM students;")
-    List<Student> getAllStudents();
+//    @Query("SELECT * FROM students;")
+//    List<Student> getAllStudents();
 
 }

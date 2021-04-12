@@ -20,9 +20,8 @@ public class Cursus {
     @Column
     private String docent;
 
-    @ManyToMany
-    @JsonIgnoreProperties("cursussen")
-    List<Student> studenten;
+    @OneToMany(mappedBy = "cursus")
+    List<StudentCursus> student_cursus;
 
     // Getters and setters
 
@@ -50,11 +49,11 @@ public class Cursus {
         this.docent = docent;
     }
 
-    public List<Student> getStudenten() {
-        return studenten;
+    public List<StudentCursus> getStudent_cursus() {
+        return student_cursus;
     }
 
-    public void setStudenten(List<Student> studenten) {
-        this.studenten = studenten;
+    public void setStudent_cursus(List<StudentCursus> student_cursus) {
+        this.student_cursus = student_cursus;
     }
 }

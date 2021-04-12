@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -28,9 +29,8 @@ public class Student {
     @Column(length = 20)
     private String telefoonnummer;
 
-    @ManyToMany
-    @JsonIgnoreProperties("studenten")
-    List<Cursus> cursussen;
+    @OneToMany(mappedBy = "student")
+    List<StudentCursus> student_cursus;
 
     // constructors
     public Student() {
@@ -95,12 +95,11 @@ public class Student {
         this.telefoonnummer = telefoonnummer;
     }
 
-    public List<Cursus> getCursussen() {
-        return cursussen;
+    public List<StudentCursus> getStudent_cursus() {
+        return student_cursus;
     }
 
-    public void setCursussen(List<Cursus> cursussen) {
-        this.cursussen = cursussen;
+    public void setStudent_cursus(List<StudentCursus> student_cursus) {
+        this.student_cursus = student_cursus;
     }
-
 }
