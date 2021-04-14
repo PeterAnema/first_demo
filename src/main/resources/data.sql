@@ -1,5 +1,14 @@
+INSERT INTO users (username, password, enabled) VALUES ('user', '$2a$10$wPHxwfsfTnOJAdgYcerBt.utdAvC24B/DWfuXfzKBSDHO0etB1ica', TRUE);
+INSERT INTO users (username, password, enabled) VALUES ('admin', '$2a$10$wPHxwfsfTnOJAdgYcerBt.utdAvC24B/DWfuXfzKBSDHO0etB1ica', TRUE);
+INSERT INTO users (username, password, enabled) VALUES ('peter', '$2a$10$wPHxwfsfTnOJAdgYcerBt.utdAvC24B/DWfuXfzKBSDHO0etB1ica', TRUE);
+
+INSERT INTO authorities (username, authority) VALUES ('user', 'ROLE_USER');
+INSERT INTO authorities (username, authority) VALUES ('admin', 'ROLE_USER');
+INSERT INTO authorities (username, authority) VALUES ('admin', 'ROLE_ADMIN');
+INSERT INTO authorities (username, authority) VALUES ('peter', 'ROLE_USER');
+
 INSERT INTO students (voornaam, achternaam, studienummer, woonplaats, telefoonnummer)
-VALUES ('Peter', 'Anema<img src="https://cwatch.comodo.com/images/i-have-been-hacked.png">', '11111', 'Lhee', '0699999387')
+VALUES ('Peter', 'Anema', '11111', 'Lhee', '0699999387')
 ,('Joost', 'van Aartsen', '22222', 'Raalte', '088888867');
 
 INSERT INTO cursussen (naam, docent)
