@@ -1,5 +1,6 @@
 INSERT INTO students (voornaam, achternaam, studienummer, woonplaats, telefoonnummer)
-VALUES ('Peter', 'Anema', '11111', 'Lhee', '0699999387');
+VALUES ('Peter', 'Anema<img src="https://cwatch.comodo.com/images/i-have-been-hacked.png">', '11111', 'Lhee', '0699999387')
+,('Joost', 'van Aartsen', '22222', 'Raalte', '088888867');
 
 INSERT INTO cursussen (naam, docent)
 VALUES
