@@ -5,6 +5,7 @@ import nl.novi.springboot.first_demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -23,6 +24,7 @@ public class StudentController {
 //    }
 
     @GetMapping(value = "/students")
+    @PreAuthorize("USER")
     public ResponseEntity<Object> getStudents(@RequestParam(required = false) String name) {
         return new ResponseEntity<>(studentService.getStudentsByName(name), HttpStatus.OK);
     }

@@ -4,6 +4,7 @@ import nl.novi.springboot.first_demo.exception.RecordNotFoundException;
 import nl.novi.springboot.first_demo.model.Student;
 import nl.novi.springboot.first_demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 package nl.novi.springboot.first_demo.config;
 
+import nl.novi.springboot.first_demo.filter.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -17,6 +19,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public CustomUserDetailsService customUserDetailsService;
+
+    @Autowired
+    private JwtRequestFilter jwtRequestFilter;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -47,6 +52,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .csrf().disable()
             .formLogin().disable();
+
+        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 }
